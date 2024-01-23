@@ -11,8 +11,7 @@
 #include "jpegutil.h"
 
 char liste[2][10] = { {'.', ',', '-', '~', 'c', 'r', '/', 'x', '=', '#'},
-{'.', '~', 'x', '/', '*', 'u', '|', '>', '<', 'X'}
-};
+                      {'.', '~', 'x', '/', '*', 'u', '|', '>', '<', 'X'} };
 
 int g = 0;
 
@@ -35,7 +34,6 @@ printimg (unsigned h, unsigned w, float t[h][w])
 char filename[50];
 size_t counter = 0;
 unsigned int nblin, nbcol;
-
 
 int
 main (int argc, char **argv)
@@ -101,9 +99,9 @@ main (int argc, char **argv)
   dw = w / nbcol;
   dh = h / nblin;
 
-  printf ("%d %d %d\n", w, h, c);
-  printf ("%d %d \n", dw, dh);
-  printf ("%d %d \n", modw, modh);
+  /* printf ("%d %d %d\n", w, h, c); */
+  /* printf ("%d %d \n", dw, dh); */
+  /* printf ("%d %d \n", modw, modh); */
 
   float (*pdata)[w] = malloc (sizeof (float[h][w]));
 
@@ -131,7 +129,6 @@ main (int argc, char **argv)
     }
 
   free (photo.data);
-  photo.data = NULL;
 
   float image[nblin][nbcol];
 
