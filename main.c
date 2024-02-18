@@ -10,8 +10,8 @@
 #include <term.h>
 #include "jpegutil.h"
 
-char liste[2][10] = { {'.', ',', '-', '~', 'c', 'r', '/', 'x', '=', '#'},
-                      {'.', '~', 'x', '/', '*', 'u', '|', '>', '<', 'X'} };
+char liste[2][10] = { {' ', '.', ',', '-', '~', 'c', 'r', '/', 'X', '#'},
+                      {' ', '~', 'x', '/', '*', 'u', '|', '>', '<', 'X'} };
 
 int g = 0;
 
@@ -78,8 +78,8 @@ main (int argc, char **argv)
       colterm = 0;
       printf ("pas de longueur de lignes et de colonnes");
     }
-  (void) colterm;
 
+	nbcol = colterm;
   /* image data */
 
   struct imgdata photo;
@@ -90,10 +90,16 @@ main (int argc, char **argv)
       exit (EXIT_FAILURE);
     }
 
-  unsigned int h, w, c, dw, dh, modw, modh;
+  unsigned int h, w, dw, dh, modw, modh;
   h = photo.h;
   w = photo.w;
-  c = photo.c;
+  float coef = ((float)w)/((float)h);
+  
+  printf("%f\n",coef);
+  printf("%d\n",colterm);
+  
+  printf("%d\n", nblin = ( 0.7 *((float)nbcol) /coef));
+
   modw = w % nbcol;
   modh = h % nblin;
   dw = w / nbcol;
