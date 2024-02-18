@@ -1,4 +1,4 @@
-# Introduction
+## Introduction
 
 Simple prog to transform Jpeg file to ascii file.
 
@@ -12,11 +12,11 @@ you have to compile with libjpeg and ncurses.
 
 original jpeg
 
-![vermeer](../main/vermeer.jpeg)
+![vermeer](../jpeg/main/vermeer.jpeg)
 
 after :
 
-![screenshot](../main/screenvermeer.jpeg)
+![screenshot](../jpeg/main/screenvermeer.jpeg)
 
 ## To do
 
