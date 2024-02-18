@@ -12,11 +12,11 @@ you have to compile with libjpeg and ncurses.
 
 original jpeg
 
-![vermeer](vermeer.jpeg)
+![vermeer](../main/vermeer.jpeg)
 
 after :
 
-![screenshot](screenvermeer.jpeg)
+![screenshot](../main/screenvermeer.jpeg)
 
 ## To do
 
