@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include <math.h>
 #include <errno.h>
 #include <curses.h>
 #include <unistd.h>
@@ -98,7 +97,7 @@ main (int argc, char **argv)
   printf("%f\n",coef);
   printf("%d\n",colterm);
   
-  printf("%d\n", nblin = ( 0.7 *((float)nbcol) /coef));
+  printf("%d\n", nblin = ( 0.64 *((float)nbcol) /coef));
 
   modw = w % nbcol;
   modh = h % nblin;
