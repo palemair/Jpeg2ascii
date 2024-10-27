@@ -43,6 +43,7 @@ int main (int argc, char** argv)
             nblin = 40;
             break;
         }
+
     case 4:
         {
             strcpy (filename, argv[1]);
@@ -50,6 +51,7 @@ int main (int argc, char** argv)
             nblin = atoi (argv[3]);
             break;
         }
+
     default:
         {
             strcpy (filename, "/usr/local/src/JPEG/img/House.jpg");
@@ -71,7 +73,6 @@ int main (int argc, char** argv)
         colterm = 0;
         printf ("pas de longueur de lignes et de colonnes");
     }
-
     nbcol = colterm;
     /* image data */
 
@@ -87,6 +88,9 @@ int main (int argc, char** argv)
 
     h = photo.h;
     w = photo.w;
+    float coef = ((float) w) / ((float) h);
+    nblin = (0.64 * ((float) nbcol) / coef);
+
     modw = w % nbcol;
     modh = h % nblin;
     dw = w / nbcol;
