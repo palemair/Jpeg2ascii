@@ -1,4 +1,5 @@
 /* programme jpeg to ascii */
+#define _GNU_SOURCE
 
 #include <stdlib.h>
 #include <string.h>
@@ -9,9 +10,10 @@
 #include <term.h>
 #include "jpegutil.h"
 
-static char liste[2][10] = { {' ', '.', ',', '-', '~', 'c', 'r', '/', 'X', '#'},
-{' ', '~', 'x', '/', '*', 'u', '|', '>', '<', 'X'}
-};
+static char liste[2][10] = {
+                             {' ', '.', ',', '-', '~', 'c', 'r', '/', 'X', '#'},
+                             {' ', '~', 'x', '/', '*', 'u', '|', '>', '<', 'X'}
+                           };
 
 static int g = 0;
 
@@ -24,6 +26,7 @@ void printimg (unsigned h, unsigned w, float t[h][w])
             g = (int) (t[y][x] * 10);
             printf ("%c", liste[0][g]);
         }
+        usleep(50000);
         printf ("\n");
     }
 }
